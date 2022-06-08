@@ -98,7 +98,8 @@ namespace Belong.SelfToursAPI.Controllers
 
             if (isATakenSlot)
                 return BadRequest();
-            
+
+            selfTour.Slot = formatedSlot;
             await _SelfTourRepo.UpdateAsync(selfTour);
 
             home.RescheduledTours++;
