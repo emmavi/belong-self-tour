@@ -17,9 +17,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IHomeRepository, HomeRepository>();
 builder.Services.AddTransient<ISelfTourRepository, SelfTourRepository>();
+builder.Services.AddTransient<IHomeProxy, HomeProxy>();
 
 builder.Services.AddHttpClient();
-builder.Services.AddHttpClient<IHomeProxy, HomeProxy>();
 
 builder.Services.Configure<HomeProxyConfig>(options => options.EndPointUrl = builder.Configuration["Proxies:HomeEndpoint"]);
 
